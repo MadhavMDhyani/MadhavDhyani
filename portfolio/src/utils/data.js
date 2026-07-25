@@ -80,3 +80,9 @@ export const STATS = [
 ];
 
 
+export const SKILL_TABS = [
+  { id: "all", label: "All" },
+  { id: "frontend", label: "Frontend" },
+  { id: "backend", label: "Backend" },
+];
+

@@ -1,6 +1,6 @@
-import React from "react";
-import PROFILE_PIC from "../assets/images/profile pic.png";
-import { FaReact, FaNodeJs, FaJs, FaJava } from "react-icons/fa6";
+import PROFILE_PIC from "../assets/images/profile-pic.png";
+import { FaReact, FaNodeJs, FaJs, FaGithub, FaLinkedin, FaDatabase, FaServer } from "react-icons/fa6";
+import { personalInfo, STATS } from "../utils/data";
 import StateInfoCard from "../components/StateInfoCard";
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
             Welcome to my Portfolio
           </span>
           <h3 className="text-xl lg:text-2xl font-medium text-slate-700">
-            Hi, I am <span className="text-[#ac573f] font-semibold">Madhav Dhyani</span>
+            Hi, I am <span className="text-[#ac573f] font-semibold">{personalInfo.name}</span>
           </h3>
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight mt-3 bg-gradient-primary bg-clip-text text-transparent">
             Building Scalable &amp; User Centric Web Apps
@@ -23,6 +23,7 @@ const Hero = () => {
             I'm a passionate JavaScript and Backend Developer with a strong focus on creating scalable, high-performance, and user-centric web applications. I strive to build seamless digital experiences that solve real-world problems.
           </p>
 
+          {/* CTA Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-8">
             <a href="#projects" className="action-btn flex items-center justify-center btn-scale-anim">
               View My Work
@@ -31,39 +32,74 @@ const Hero = () => {
               Contact Me
             </a>
           </div>
+
+          {/* Quick Social Links */}
+          <div className="flex items-center justify-center lg:justify-start gap-4 mt-6">
+            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Connect:</span>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 bg-white shadow-sm border border-orange-100 rounded-full text-slate-700 hover:text-[#ac573f] hover:border-[#ac573f] transition-all hover:scale-110"
+              aria-label="GitHub"
+            >
+              <FaGithub className="text-lg" />
+            </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 bg-white shadow-sm border border-orange-100 rounded-full text-slate-700 hover:text-[#ac573f] hover:border-[#ac573f] transition-all hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="text-lg" />
+            </a>
+          </div>
         </div>
 
         {/* Right Content / Profile Graphic */}
         <div className="relative flex justify-center items-center">
           {/* Tech Badges floating */}
-          <div className="absolute -top-4 -left-4 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 animate-bounce">
+          <div className="absolute -top-4 -left-4 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 animate-bounce z-10">
             <FaReact className="text-sky-400 text-2xl" />
             <span className="text-xs font-semibold text-slate-700">React</span>
           </div>
 
-          <div className="absolute top-1/2 -right-6 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2">
+          <div className="absolute top-1/4 -right-6 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 z-10">
             <FaNodeJs className="text-green-500 text-2xl" />
             <span className="text-xs font-semibold text-slate-700">Node.js</span>
           </div>
 
-          <div className="absolute -bottom-4 left-6 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2">
+          <div className="absolute -bottom-4 left-4 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 z-10">
             <FaJs className="text-yellow-400 text-2xl" />
             <span className="text-xs font-semibold text-slate-700">JavaScript</span>
+          </div>
+
+          <div className="absolute -bottom-4 -right-2 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 z-10">
+            <FaDatabase className="text-purple-500 text-2xl" />
+            <span className="text-xs font-semibold text-slate-700">Databases</span>
+          </div>
+
+          <div className="absolute -top-4 right-8 p-2.5 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2 z-10">
+            <FaServer className="text-orange-500 text-xl" />
+            <span className="text-xs font-semibold text-slate-700">APIs</span>
           </div>
 
           {/* Profile Card Container */}
           <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden bg-gradient-to-tr from-amber-100 to-orange-200 p-2 shadow-2xl">
             <img
               src={PROFILE_PIC}
-              alt="Madhav Dhyani Profile Pic"
+              alt={`${personalInfo.name} Profile Pic`}
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
         </div>
       </div>
-      <div className="flex gap-12 nt-16 md:nt-24 flex-wrap">
-        {STATS.map((item) => (
-          <StateInfoCard key={item.id} count={item.count} label={item.label} />
+
+      {/* Stats Counter Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16">
+        {STATS.map((stat) => (
+          <StateInfoCard key={stat.id} count={stat.count} label={stat.label} />
         ))}
       </div>
     </section>
@@ -71,15 +107,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-export const personalInfo = {
-  name: "Madhav Dhyani",
-  role: "Backend Developer",
-  bio: "Hi, This is Madhav Dhyani, a passionate Backend Developer.",
-  email: "dhyani.pankaj811@gmail.com",
-  phone: "+91 9602938300",
-  location: "Indore, India",
-  github: "https://github.com/madhavdhyani",
-  linkedin: "https://linkedin.com/in/madhavdhyani",
-  resume: "/resume.pdf"
-};

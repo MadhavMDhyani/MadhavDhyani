@@ -1,22 +1,31 @@
+import { useState } from "react";
 import { skills } from "../utils/data";
 
+
 const TechnicalProficiency = () => {
+  const [tabData, setTabData] = useState(skills);
+  const [activeTab, setActiveTab] = useState("all");
+
+  const handleTabValueChange = (value) => {}
+
   return (
-    <section id="skills" className="container mx-auto px-6 md:px-12 py-16">
-      <h2 className="text-3xl font-bold text-slate-800 mb-8 bg-gradient-primary bg-clip-text text-transparent inline-block">
-        Technical Proficiency
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        {skills.map((skill) => (
-          <div
-            key={skill.id}
-            className="p-6 rounded-2xl bg-white border border-[#fee6cc] shadow-sm hover:shadow-md transition-all text-center group cursor-pointer"
-          >
-            <p className="font-semibold text-slate-700 group-hover:text-[#ac573f] transition-colors">
-              {skill.name}
+  
+    <section id="skills" className="bg-background mt-20">
+      <div className="container mx-auto p-10">
+        <div className="w-full lg:w-[60vw] mx-auto">
+          <h4 className="section-title">
+            Technical Proficiency
+          </h4>
+       
+            <p className="text-sm text-center mt-4 leading-6">
+              A versaitile developer with hands-on expertise in modern technologies,
+              tools,frameworks and dedicated to building efficient,scalable and
+              user-centric solutions. 
+             
             </p>
           </div>
-        ))}
+
+
       </div>
     </section>
   );
