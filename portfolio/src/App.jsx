@@ -31,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-[#FFFCF8] dark:bg-[#0f172a] min-h-screen text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+    <div className="bg-[#FFFCF8] dark:bg-black min-h-screen text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
       <AboutMe />

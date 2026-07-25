@@ -29,9 +29,9 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
 
   return (
     <nav className="container mx-auto sticky top-5 z-50">
-      <div className="flex items-center justify-between rounded-full bg-white/60 dark:bg-slate-900/70 border border-[#fee6cc] dark:border-slate-800 backdrop-blur-[10px] mx-5 my-3 p-3 md:py-3 md:px-6 transition-colors">
+      <div className="flex items-center justify-between rounded-full bg-white/60 dark:bg-[#0a0a0a]/80 border border-[#fee6cc] dark:border-[#1a1a1a] backdrop-blur-[10px] mx-5 my-3 p-3 md:py-3 md:px-6 transition-colors">
         {/* Logo */}
-        <img className="h-8 object-contain" src={LOGO} alt="Logo" />
+        <img className="h-8 object-contain dark:brightness-110" src={LOGO} alt="Logo" />
 
         {/* Navigation Links */}
         <ul className={`${isOpen ? "flex" : "hidden"} menu-wrapper`}>
@@ -39,7 +39,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             <li key={item.id}>
               <a
                 href={`#${item.to}`}
-                className="menu-item text-slate-700 dark:text-slate-200 hover:text-[#ac573f] dark:hover:text-[#f4a44f] transition-colors"
+                className="menu-item text-slate-700 dark:text-slate-300 hover:text-[#ac573f] dark:hover:text-[#f4a44f] transition-colors"
                 onClick={() => {
                   if (window.innerWidth < 768) setIsOpen(false);
                 }}
@@ -50,11 +50,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
           ))}
         </ul>
 
-        {/* Right Controls: Dark Mode Toggle & Hire Me Button */}
+        {/* Right Controls */}
         <div className="flex items-center gap-3">
           <button
             onClick={toggleDarkMode}
-            className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:scale-110 transition-all border border-orange-100 dark:border-slate-700"
+            className="p-2.5 rounded-full bg-slate-100 dark:bg-[#111111] text-slate-700 dark:text-amber-400 hover:scale-110 transition-all border border-orange-100 dark:border-[#222222]"
             aria-label="Toggle Theme"
           >
             {isDarkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
