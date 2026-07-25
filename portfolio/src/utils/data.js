@@ -1,10 +1,13 @@
 export const personalInfo = {
-  name: "Your Name",
-  role: "Frontend Developer",
-  bio: "I am a passionate web developer who loves building beautiful and interactive user experiences. When I am not coding, I love exploring new technologies and designing creative solutions!",
-  email: "hello@yourdomain.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername"
+  name: "Madhav Dhyani",
+  role: "Backend Developer",
+  bio: "Hi, This is Madhav Dhyani, a passionate Backend Developer.",
+  email: "dhyani.pankaj811@gmail.com",
+  phone: "+91 9602938300",
+  location: "Indore, India",
+  github: "https://github.com/madhavdhyani",
+  linkedin: "https://linkedin.com/in/madhavdhyani",
+  resume: "/resume.pdf"
 };
 
 export const skills = [
@@ -69,4 +72,11 @@ export const MENU_LINKS = [
     offset: -80,
   },
 ];
+
+export const STATS = [
+  { id: 1, count: "02+", label: "Years of\nExperience" },
+  { id: 2, count: "10+", label: "Projects\nCompleted" },
+  { id: 3, count: "15+", label: "Technologies\nMastered" }
+];
+
 

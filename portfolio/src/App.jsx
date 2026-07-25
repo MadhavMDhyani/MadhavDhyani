@@ -1,8 +1,8 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import AboutMe from './sections/AboutMe';
 import TechnicalProficiency from './sections/TechnicalProficiency';
+import Projects from './sections/Projects';
 import ContactMe from './sections/ContactMe';
 import Footer from './sections/Footer';
 
@@ -13,6 +13,7 @@ const App = () => {
       <Hero />
       <AboutMe />
       <TechnicalProficiency />
+      <Projects />
       <ContactMe />
       <Footer />
     </div>

@@ -1,7 +1,4 @@
-import React from "react";
-import { skills as defaultSkills } from "../utils/data";
-
-export const skills = defaultSkills;
+import { skills } from "../utils/data";
 
 const TechnicalProficiency = () => {
   return (

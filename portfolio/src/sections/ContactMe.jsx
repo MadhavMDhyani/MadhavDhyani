@@ -1,5 +1,4 @@
-import React from "react";
-import { personalInfo } from "./Hero";
+import { personalInfo } from "../utils/data";
 import { FaEnvelope, FaPhone, FaLocationDot, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const ContactMe = () => {

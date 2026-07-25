@@ -1,5 +1,4 @@
-import React from "react";
-import { personalInfo } from "./Hero";
+import { personalInfo } from "../utils/data";
 
 const AboutMe = () => {
   return (

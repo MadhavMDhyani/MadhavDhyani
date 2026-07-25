@@ -1,6 +1,7 @@
 import React from "react";
-import PROFILE_PIC from "../assets/hero.png";
+import PROFILE_PIC from "../assets/images/profile pic.png";
 import { FaReact, FaNodeJs, FaJs, FaJava } from "react-icons/fa6";
+import StateInfoCard from "../components/StateInfoCard";
 
 const Hero = () => {
   return (
@@ -39,9 +40,6 @@ const Hero = () => {
             <FaReact className="text-sky-400 text-2xl" />
             <span className="text-xs font-semibold text-slate-700">React</span>
           </div>
-          <div className="">
-            <img src={PROFILE_PIC} alt="profile pic.png" className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl object-cover" />
-          </div>
 
           <div className="absolute top-1/2 -right-6 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2">
             <FaNodeJs className="text-green-500 text-2xl" />
@@ -57,11 +55,16 @@ const Hero = () => {
           <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden bg-gradient-to-tr from-amber-100 to-orange-200 p-2 shadow-2xl">
             <img
               src={PROFILE_PIC}
-              alt="Madhav Dhyani"
+              alt="Madhav Dhyani Profile Pic"
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
         </div>
+      </div>
+      <div className="flex gap-12 nt-16 md:nt-24 flex-wrap">
+        {STATS.map((item) => (
+          <StateInfoCard key={item.id} count={item.count} label={item.label} />
+        ))}
       </div>
     </section>
   );
