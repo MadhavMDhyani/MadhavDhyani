@@ -35,6 +35,7 @@ export const skills = [
     icon: FaCss3Alt,
     progress:80,
     description: "Proficient in creating responsive layouts, animations, Flexbox, Grid, and modern UI designs.",
+    type:"frontend",
   },
   {
     id: 3,
@@ -42,6 +43,7 @@ export const skills = [
     icon: FaJs,
     progress:100,
     description: "Skilled in writing clean ES6+ JavaScript, DOM manipulation, asynchronous programming, and APIs.",
+    type:"frontend",
   },
   {
     id: 4,
@@ -49,6 +51,7 @@ export const skills = [
     icon: FaReact,
     progress:100,
     description: "Experienced in building reusable components, managing state, routing, and developing scalable React applications.",
+    type:"frontend",
   },
   {
     id: 5,
@@ -56,6 +59,7 @@ export const skills = [
     icon: SiVite,
     progress:85,
     description: "Fast build tool used for creating modern React applications with optimized development and production builds.",
+    type:"tools",
   },
   {
     id: 6,
@@ -63,6 +67,7 @@ export const skills = [
     icon: SiTailwindcss,
     progress:90,
     description: "Utility-first CSS framework for building responsive, modern, and highly customizable user interfaces.",
+    frontend:"frontend",
   },
 ];
 
