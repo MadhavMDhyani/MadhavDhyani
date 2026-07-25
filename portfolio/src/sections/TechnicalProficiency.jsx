@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SKILL_TABS, skills } from "../utils/data";
 import Tabs from "../components/Tabs";
+import SkillCard from "../components/SkillCard";
 
 const TechnicalProficiency = () => {
    const [tabData, setTabData] = useState(skills);
@@ -8,13 +9,12 @@ const TechnicalProficiency = () => {
 
    const handleTabValueChange = (value) => {
     if (value == "all") {
-      setTableData(skills);
+      setTabData(skills);
       setActiveTab("all");
       return;
     }
       const updatedList = skills.filter((skill) => skill.type === value);
-      setTableData(updatedList);
-
+      setTabData(updatedList);
       setActiveTab(value);
 
 
@@ -50,19 +50,20 @@ const TechnicalProficiency = () => {
 
         <Tabs
            tabList={SKILL_TABS}
-           activelab={activeTab}
+           activeTab={activeTab}
            onChange={handleTabValueChange}
            /> 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-4 gap-4 min-h-[43px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 min-h-[43px]">
            {tabData.map((skill, index) => (
             <div 
             key={skill.id}
             >
-              <Skillcard
-              icon={<skill.icon className="w-6 h-6 text-primary" />}
-              skillName={skill.skill}
-              description={skill.progress}
-              />
+              <SkillCard
+              icon={<skill.icon className="w-6 h-6 text-white" />}
+              skillName={skill.name}
+              progress={skill.progress}
+              description={skill.description}
+              /> 
               </div>
                 ))}
               </div>

@@ -24,4 +24,4 @@ const Tabs = ({tabList, activeTab, onChange}) => {
   )
 }
 
-export default Tabs
+export default Tabs;
