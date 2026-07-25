@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tabs = (tabList, activeTab, oonChange) => {
+const Tabs = ({tabList, activeTab, onChange}) => {
     const getActiveStyles = (value) => {
         return activeTab === value
         ? "text-white bg-gradient-primary"
@@ -14,7 +14,7 @@ const Tabs = (tabList, activeTab, oonChange) => {
             <button 
             key={tab.id}
             className={`text-xs md:text-[15px] ${getActiveStyles(tab.value)} rounded-full px-4 md:px-10 py-[6px] md:py-3`} 
-            onClick={() => onchange(tab.value)}
+            onClick={() => onChange(tab.value)}
             >
                 {tab.label}
             </button>

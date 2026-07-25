@@ -53,7 +53,7 @@ const TechnicalProficiency = () => {
            activelab={activeTab}
            onChange={handleTabValueChange}
            /> 
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-4 gap-4 min-h-[43px]">
            {tabData.map((skill, index) => (
             <div 
             key={skill.id}
@@ -65,7 +65,7 @@ const TechnicalProficiency = () => {
               />
               </div>
                 ))}
-
+              </div>
       </div>
     </section>
   );
