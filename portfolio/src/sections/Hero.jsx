@@ -39,6 +39,9 @@ const Hero = () => {
             <FaReact className="text-sky-400 text-2xl" />
             <span className="text-xs font-semibold text-slate-700">React</span>
           </div>
+          <div className="">
+            <img src={PROFILE_PIC} alt="profile pic.png" className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl object-cover" />
+          </div>
 
           <div className="absolute top-1/2 -right-6 p-3 bg-white shadow-lg rounded-2xl border border-orange-100 flex items-center gap-2">
             <FaNodeJs className="text-green-500 text-2xl" />
