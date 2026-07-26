@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SkillCard = ({ icon, skillName, description, progress }) => {
   return (
     <div className="bg-white dark:bg-black rounded-2xl border border-[#fccbd4] dark:border-white/10 p-4 dark:shadow-[0_0_24px_-8px_rgba(255,138,61,0.15)] transition-shadow duration-300">

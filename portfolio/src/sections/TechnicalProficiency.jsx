@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SKILL_TABS, skills } from "../utils/data";
 import Tabs from "../components/Tabs";
 import SkillCard from "../components/SkillCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const TechnicalProficiency = () => {
    const [tabData, setTabData] = useState(skills);
