@@ -6,7 +6,7 @@ import TechnicalProficiency from './sections/TechnicalProficiency';
 import Projects from './sections/Projects';
 import ContactMe from './sections/ContactMe';
 import Footer from './sections/Footer';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -40,6 +40,7 @@ const App = () => {
       <Projects />
       <ContactMe />
       <Footer />
+      <Analytics />
     </div>
   );
 };
