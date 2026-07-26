@@ -1,14 +1,64 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { personalInfo } from "../utils/data";
 import { FaEnvelope, FaPhone, FaLocationDot, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const ContactMe = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", review: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+
+    // Replace these three values with the ones from your EmailJS dashboard
+    const SERVICE_ID = "service_b8ho4zb";
+    const TEMPLATE_ID = "template_lzy3h8z";
+    const PUBLIC_KEY = "dVFJ7HODmFTPQKS12";
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.review,
+        },
+        PUBLIC_KEY
+      )
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", review: "" });
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setError("Something went wrong. Please try again in a moment.");
+      })
+      .finally(() => {
+        setSending(false);
+      });
+  };
+
   return (
     <section id="contact" className="container mx-auto px-6 md:px-12 py-16">
       <div className="bg-gradient-to-r from-orange-500 to-amber-600 dark:from-[#1a0f05] dark:to-[#0a0a0a] rounded-3xl p-8 md:p-12 text-white shadow-xl dark:shadow-black/40 dark:border dark:border-[#2a1a0e] transition-colors">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
           <p className="text-orange-100 dark:text-slate-400 mb-8">
-            Have a project in mind or want to talk tech? Reach out to me directly or connect on social media.
+            Have a project in mind or want to talk tech? The fastest way to reach me is by email at{" "}
+            <a href={`mailto:${personalInfo.email}`} className="underline font-semibold">
+              {personalInfo.email}
+            </a>{" "}
+            — I typically respond within a day. You can also call or text me directly at{" "}
+            <span className="font-semibold">{personalInfo.phone}</span>, or connect with me on GitHub and LinkedIn below.
           </p>
 
           <div className="space-y-4">
@@ -47,6 +97,63 @@ const ContactMe = () => {
             >
               <FaLinkedin className="text-2xl" />
             </a>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-white/20 dark:border-[#2a1a0e]">
+            <h3 className="text-xl font-bold mb-2">Leave a Review</h3>
+            <p className="text-orange-100 dark:text-slate-400 mb-6 text-sm">
+              Worked with me on a project? Share your name, email, and a short review below.
+            </p>
+
+            {submitted && (
+              <p className="mb-4 text-sm font-medium bg-white/20 dark:bg-[#111111] dark:border dark:border-[#222222] rounded-lg px-4 py-3">
+                Thank you! Your review has been submitted.
+              </p>
+            )}
+            {error && (
+              <p className="mb-4 text-sm font-medium bg-red-500/20 dark:bg-red-950/40 dark:border dark:border-red-900/50 rounded-lg px-4 py-3">
+                {error}
+              </p>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-[#111111] placeholder-white/70 dark:placeholder-slate-500 text-white dark:text-slate-200 border border-white/30 dark:border-[#222222] focus:outline-none focus:ring-2 focus:ring-white/50 dark:focus:ring-[#f4a44f]/50"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your gmail / email address"
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-[#111111] placeholder-white/70 dark:placeholder-slate-500 text-white dark:text-slate-200 border border-white/30 dark:border-[#222222] focus:outline-none focus:ring-2 focus:ring-white/50 dark:focus:ring-[#f4a44f]/50"
+                />
+              </div>
+              <textarea
+                name="review"
+                value={formData.review}
+                onChange={handleChange}
+                placeholder="Write your review here..."
+                required
+                rows={4}
+                className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-[#111111] placeholder-white/70 dark:placeholder-slate-500 text-white dark:text-slate-200 border border-white/30 dark:border-[#222222] focus:outline-none focus:ring-2 focus:ring-white/50 dark:focus:ring-[#f4a44f]/50 resize-none"
+              />
+              <button
+                type="submit"
+                disabled={sending}
+                className="px-6 py-3 rounded-xl bg-white text-orange-600 dark:bg-[#f4a44f] dark:text-[#0a0a0a] font-semibold hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {sending ? "Sending..." : "Submit Review"}
+              </button>
+            </form>
           </div>
         </div>
       </div>
