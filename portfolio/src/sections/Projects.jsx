@@ -44,7 +44,7 @@ const Projects = () => {
               )}
               {project.githubLink && (
                 <a
-                  href={project.githubLink}
+                  href={"https://github.com/MadhavMDhyani/Volaitile-Friday"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:underline"
