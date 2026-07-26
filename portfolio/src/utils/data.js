@@ -5,7 +5,7 @@ import {
   FaReact
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiVite } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiVite, SiSpringboot } from "react-icons/si";
 
 export const personalInfo = {
   name: "Madhav Dhyani",
@@ -67,8 +67,26 @@ export const skills = [
     icon: SiTailwindcss,
     progress:90,
     description: "Utility-first CSS framework for building responsive, modern, and highly customizable user interfaces.",
-    frontend:"frontend",
+    type:"frontend",
   },
+  {
+    id: 7,
+    name: "MongoDB",
+    icon: SiMongodb,
+    progress: 75,
+    description: "Experienced in designing and managing NoSQL database schema design, indexing, and query optimization.",
+    type:"backend",
+  },
+  {
+    id: 8,
+    name: "Spring Boot",
+    icon: SiSpringboot,
+    progress: 85,
+    description: "Experienced in building REST APIs, implementing MVC architecture, integrating databases, and developing scalable backend applications with Spring Boot",
+    type: "backend",
+
+  },
+  
 ];
 
 export const projects = [

@@ -62,7 +62,7 @@ const TechnicalProficiency = () => {
               transition={{ duration: 0.4, delay: index * 0.1}}
               >
               <SkillCard
-                icon={<skill.icon className="w-6 h-6 text-white" />}
+                icon={<skill.icon className="w-6 h-6" />}
                 skillName={skill.name}
                 progress={skill.progress}
                 description={skill.description}

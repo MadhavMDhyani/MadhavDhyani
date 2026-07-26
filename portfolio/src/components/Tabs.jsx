@@ -1,27 +1,34 @@
 import React from 'react'
+import { motion, AnimatePresence } from "framer-motion";
 
 const Tabs = ({tabList, activeTab, onChange}) => {
     const getActiveStyles = (value) => {
         return activeTab === value
-        ? "text-white bg-gradient-primary"
-        : "text-secondary bg-transparent";
+        ? "text-white bg-gradient-primary dark:shadow-[0_0_20px_-4px_rgba(255,138,61,0.6)]"
+        : "text-secondary dark:text-gray-500 bg-transparent";
     };
 
-  return (
+    return (
     <div className='flex items-center justify-center my-10'>
-        <div className="bg-[#fff6eb] rounded-full flex">
-         {tabList.map((tab) => (
-            <button 
+        <div className="bg-[#fff6eb] dark:bg-white/5 dark:border dark:border-white/10 rounded-full flex">
+        {tabList.map((tab) => (
+            <motion.button
             key={tab.id}
-            className={`text-xs md:text-[15px] ${getActiveStyles(tab.value)} rounded-full px-4 md:px-10 py-[6px] md:py-3`} 
+            initial={{ opacity: 0.8, scale: 1}}
+            animate={{
+                opacity: activeTab === tab.value ? 1 : 0.8,
+                scale: activeTab === tab.value ? 1.05 : 1,
+            }}
+            transition={{ duration : 0.2}}
+            className={`text-xs md:text-[15px] ${getActiveStyles(tab.value)} rounded-full px-4 md:px-10 py-[6px] md:py-3`}
             onClick={() => onChange(tab.value)}
             >
                 {tab.label}
-            </button>
-         ))}
+            </motion.button>
+        ))}
         </div>
-        </div>
-  )
+    </div>
+    )
 }
 
 export default Tabs;

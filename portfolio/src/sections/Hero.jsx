@@ -65,9 +65,12 @@ const Hero = () => {
             <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">React</span>
           </div>
 
-          <div className="absolute top-1/4 -right-6 p-3 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 z-10">
-            <FaNodeJs className="text-green-500 text-2xl" />
-            <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Node.js</span>
+          <div
+           className="absolute top-1/4 -right-6 p-3 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 animate-bounce z-10"
+             style={{ animationDelay: "0.2s" }}
+                 > 
+              <FaNodeJs className="text-green-500 text-2xl" />
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Node.js</span>
           </div>
 
           <div className="absolute -bottom-4 left-4 p-3 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 z-10">
@@ -75,9 +78,12 @@ const Hero = () => {
             <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">JavaScript</span>
           </div>
 
-          <div className="absolute -bottom-4 -right-2 p-3 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 z-10">
-            <FaDatabase className="text-purple-500 text-2xl" />
-            <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Databases</span>
+         <div
+             className="absolute -bottom-4 -right-2 p-3 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 animate-bounce z-10"
+             style={{ animationDelay: "0.4s" }}
+            >
+              <FaDatabase className="text-purple-500 text-2xl" />
+               <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Databases</span>
           </div>
 
           <div className="absolute -top-4 right-8 p-2.5 bg-white dark:bg-[#0a0a0a] shadow-lg dark:shadow-black/40 rounded-2xl border border-orange-100 dark:border-[#1a1a1a] flex items-center gap-2 z-10">
