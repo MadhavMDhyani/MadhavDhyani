@@ -92,19 +92,19 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A beautiful, fully responsive shopping app with a working cart and seamless checkout process.",
-    image: "./assets/project1.jpg", 
-    technologies: ["React", "CSS", "Node.js"],
+    title: "AI Chatbot Platform",
+    description: "A full-stack conversational AI application delivering context-aware, real-time responses through a streaming chat interface. Features persistent conversation history, prompt engineering for domain-specific accuracy, and a modular backend architecture designed for easy integration of additional language models.",
+    image: "./assets/project1.jpg",
+    technologies: ["React", "Node.js", "OpenAI API", "MongoDB"],
     liveLink: "https://your-live-site.com",
     githubLink: "https://github.com/yourusername/project1"
   },
   {
     id: 2,
-    title: "Weather Dashboard",
-    description: "An incredibly fast weather application fetching real-time data from a live API.",
+    title: "Ride-Hailing App (Uber Clone)",
+    description: "A real-time ride-booking platform replicating core Uber functionality, including live driver-rider tracking, dynamic fare estimation, and automated ride matching. Built with a scalable backend for handling concurrent location updates and a responsive, map-driven user interface.",
     image: "./assets/project2.jpg",
-    technologies: ["JavaScript", "HTML", "API"],
+    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
     liveLink: "https://your-live-site2.com",
     githubLink: "https://github.com/yourusername/project2"
   }
@@ -158,4 +158,3 @@ export const SKILL_TABS = [
   { id: "05", label: "Skills", value: "soft-skills" },
   
 ];
-
